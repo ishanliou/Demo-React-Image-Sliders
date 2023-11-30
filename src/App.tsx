@@ -15,14 +15,7 @@ const IMAGES = [
 
 export default function App() {
   return (
-    <div
-      style={{
-        maxWidth: "1200px",
-        width: "100%",
-        aspectRatio: "10/6",
-        margin: " 0 auto",
-      }}
-    >
+    <div className=" max-w-7xl w-full aspect-[10/6] m-auto">
       <ImageSlider images={IMAGES} />
     </div>
   );

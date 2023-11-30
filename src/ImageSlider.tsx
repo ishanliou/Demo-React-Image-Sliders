@@ -29,15 +29,15 @@ export function ImageSlider({ images }: ImageSliderProps) {
   }
 
   return (
-    <section aria-label="Image Slider" className="image-slider">
-      <div className="image-container">
+    <section aria-label="Image Slider" className="w-full h-full relative">
+      <div className="w-full h-full overflow-hidden flex">
         {images.map(({ url, alt }, index) => (
           <img
             key={url}
             src={url}
             alt={alt}
             aria-hidden={imageIndex !== index}
-            className="img-slider-img"
+            className="img-slider-img object-cover w-full h-full block shrink-0 grow-0 transition-all duration-700 ease-in-out"
             style={{ translate: `${-100 * imageIndex}%` }}
           />
         ))}
@@ -45,23 +45,23 @@ export function ImageSlider({ images }: ImageSliderProps) {
 
       <button
         onClick={showPrevImage}
-        className="img-slider-btn btn-left"
+        className="img-slider-btn left-0 block absolute top-0 bottom-0 p-[1rem] hover:bg-[#00000033] transition duration-500 ease-in-out"
         aria-label="View Previous Image"
       >
         <ArrowLeftCircle aria-hidden />
       </button>
       <button
         onClick={showNextImage}
-        className="img-slider-btn btn-right"
+        className="img-slider-btn right-0 block absolute top-0 bottom-0 p-[1rem] hover:bg-[#00000033] transition duration-500 ease-in-out focus-visible:bg-[#00000033]"
         aria-label="View Next Image"
       >
         <ArrowRightCircle aria-hidden />
       </button>
 
-      <div className="dot-btns">
+      <div className="dot-btns absolute bottom-[0.5rem] left-1/2 -translate-50% flex gap-1">
         {images.map((_, index) => (
           <button
-            className="img-slider-dot-btn"
+            className="img-slider-dot-btn block w-4 h-4 transition ease-in-out hover:scale-110  focus-visible:scale-110"
             key={index}
             onClick={() => setImageIndex(index)}
             aria-label={`View Image ${index + 1}`}
