@@ -48,14 +48,20 @@ export function ImageSlider({ images }: ImageSliderProps) {
         className="img-slider-btn left-0 block absolute top-0 bottom-0 p-[1rem] hover:bg-[#00000033] transition duration-500 ease-in-out"
         aria-label="View Previous Image"
       >
-        <ArrowLeftCircle aria-hidden />
+        <ArrowLeftCircle
+          aria-hidden
+          className="hover:animate-arrowAnimation stroke-white w-8 h-8"
+        />
       </button>
       <button
         onClick={showNextImage}
-        className="img-slider-btn right-0 block absolute top-0 bottom-0 p-[1rem] hover:bg-[#00000033] transition duration-500 ease-in-out focus-visible:bg-[#00000033]"
+        className="img-slider-btn right-0 block absolute top-0 bottom-0 p-[1rem] hover:bg-[#00000033] transition duration-500 ease-in-out focus-visible:bg-[#00000033] "
         aria-label="View Next Image"
       >
-        <ArrowRightCircle aria-hidden />
+        <ArrowRightCircle
+          aria-hidden
+          className="hover:animate-arrowAnimation stroke-white w-8 h-8"
+        />
       </button>
 
       <div className="dot-btns absolute bottom-[0.5rem] left-1/2 -translate-50% flex gap-1">
@@ -67,9 +73,9 @@ export function ImageSlider({ images }: ImageSliderProps) {
             aria-label={`View Image ${index + 1}`}
           >
             {index === imageIndex ? (
-              <CircleDot aria-hidden />
+              <CircleDot aria-hidden className=" stroke-white w-full h-full" />
             ) : (
-              <Circle aria-hidden />
+              <Circle aria-hidden className=" stroke-white w-full h-full" />
             )}
           </button>
         ))}

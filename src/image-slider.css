@@ -1,22 +1,11 @@
-.img-slider-btn:hover > *,
-.img-slider-btn:focus-visible {
-  animation: arrow-animation 700ms ease-in-out;
-}
-
-@keyframes arrow-animation {
-  50% {
-    transform: scale(1.1);
-  }
-}
-
 .img-slider-btn > * {
-  stroke: #fff;
-  width: 2rem;
-  height: 2rem;
+  /* stroke: #fff; */
+  /* width: 2rem;
+  height: 2rem; */
 }
 
 .img-slider-dot-btn > * {
-  stroke: #fff;
-  height: 100%;
-  width: 100%;
+  /* stroke: #fff; */
+  /* height: 100%;
+  width: 100%; */
 }
